@@ -13,9 +13,10 @@ function fillCode() {
         
       eval(editable.textContent);
     } catch(e) {
-      let para = document.createElement('p');
-      para.textContent = e;
-      section.appendChild(para);
+      // let para = document.createElement('p');
+      // para.textContent = e;
+      // section.appendChild(para);
+        section.innerHTML = e;
         
     }
 }
