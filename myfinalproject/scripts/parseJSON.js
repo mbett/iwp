@@ -1,3 +1,10 @@
+    
+// Parse the JSON question file into memory
+// Store the JSON in Firebase
+// Present the learing objectives, skills, and questions for the given page
+// Listen for answers
+// Record answers and display Correct or hints.
+
     const header = document.querySelector('header');
     const section = document.querySelector('section');
 
