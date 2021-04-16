@@ -7,7 +7,7 @@
       "skill" : "Add two numbers together",
       "question" : "What is 25 + 4?",
       "answer" : 29,
-      "questionType" "multiple choice",
+      "questionType" : "multiple choice",
       "selectedAnswers" : "Dan Jukes",
       "distractor" : [
         "Radiation resistance",
@@ -19,7 +19,7 @@
       "skill" : "Add two numbers together",
       "question" : "What is 25 * 4?",
       "answer" : 100,
-      "questionType" "short answer",
+      "questionType" : "short answer",
       "selectedAnswers" : "Dan Jukes",
       "distractor" : [
       ]
