@@ -1,5 +1,6 @@
 {
   "students" : [],
+  {
   "learningObjective" : "To learn math",
   "active" : true,
   "questions" : [
@@ -8,7 +9,7 @@
       "question" : "What is 25 + 4?",
       "answer" : 29,
       "questionType" : "multiple choice",
-      "selectedAnswers" : "Dan Jukes",
+      "selectedAnswers" : [],
       "distractor" : [
         "Radiation resistance",
         "Turning tiny",
@@ -16,13 +17,14 @@
       ]
     },
      {
-      "skill" : "Add two numbers together",
+      "skill" : "Multiply two numbers together",
       "question" : "What is 25 * 4?",
       "answer" : 100,
       "questionType" : "short answer",
-      "selectedAnswers" : "Dan Jukes",
+      "selectedAnswers" : [],
       "distractor" : [
       ]
     }
-  ]
+  ] // end skill
+} // end learning objective
 }
