@@ -1,28 +1,30 @@
  {
-	"students": {
-		"name": "studentname",
-		"learningObjective": "To learn math",
-		"active": true,
-		"questions": [{
-				"skill": "Add two numbers together",
-				"question": "What is 25 + 4?",
-				"answer": 29,
-				"questionType": "multiple choice",
-				"selectedAnswers": [],
-				"distractor": [
-					"Radiation resistance",
-					"Turning tiny",
-					"Radiation blast"
-				]
-			},
-			{
-				"skill": "Multiply two numbers together",
-				"question": "What is 25 * 4?",
-				"answer": 100,
-				"questionType": "short answer",
-				"selectedAnswers": [],
-				"distractor": []
-			}
-		]
-	}
-}
+ 	"students": {
+ 		"name": "studentname",
+ 		"learningObjective": [{
+ 			"objective": "To learn math",
+ 			"active": true,
+ 			"questions": [{
+ 					"skill": "Add two numbers together",
+ 					"question": "What is 25 + 4?",
+ 					"answer": 29,
+ 					"questionType": "multiple choice",
+ 					"selectedAnswers": [],
+ 					"distractor": [
+ 						"Radiation resistance",
+ 						"Turning tiny",
+ 						"Radiation blast"
+ 					]
+ 				},
+ 				{
+ 					"skill": "Multiply two numbers together",
+ 					"question": "What is 25 * 4?",
+ 					"answer": 100,
+ 					"questionType": "short answer",
+ 					"selectedAnswers": [],
+ 					"distractor": []
+ 				}
+ 			]
+ 		}]
+ 	}
+ }
