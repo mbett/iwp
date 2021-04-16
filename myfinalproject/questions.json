@@ -1,4 +1,6 @@
 {
+  "students" : [],
+  "learningObjective" : "To learn math",
   "squadName" : "Super Hero Squad",
   "homeTown" : "Metro City",
   "formed" : 2016,
@@ -6,8 +8,10 @@
   "active" : true,
   "questions" : [
     {
+      "skill" : "Add two numbers together",
       "question" : "What is 25 + 4?",
       "answer" : 29,
+      "questionType" "multiple choice",
       "selectedAnswers" : "Dan Jukes",
       "distractor" : [
         "Radiation resistance",
@@ -15,26 +19,13 @@
         "Radiation blast"
       ]
     },
-    {
-      "name" : "Madame Uppercut",
-      "age" : 39,
-      "secretIdentity" : "Jane Wilson",
-      "powers" : [
-        "Million tonne punch",
-        "Damage resistance",
-        "Superhuman reflexes"
-      ]
-    },
-    {
-      "name" : "Eternal Flame",
-      "age" : 1000000,
-      "secretIdentity" : "Unknown",
-      "powers" : [
-        "Immortality",
-        "Heat Immunity",
-        "Inferno",
-        "Teleportation",
-        "Interdimensional travel"
+     {
+      "skill" : "Add two numbers together",
+      "question" : "What is 25 * 4?",
+      "answer" : 100,
+      "questionType" "short answer",
+      "selectedAnswers" : "Dan Jukes",
+      "distractor" : [
       ]
     }
   ]
