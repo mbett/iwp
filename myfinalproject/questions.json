@@ -1,6 +1,5 @@
 {
   "students" : [],
-  {
   "learningObjective" : "To learn math",
   "active" : true,
   "questions" : [
@@ -25,6 +24,5 @@
       "distractor" : [
       ]
     }
-  ], // end questions
+    ] // end questions
 } // end learning objective
-}
