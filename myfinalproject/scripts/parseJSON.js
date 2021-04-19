@@ -15,12 +15,10 @@
     request.send();
 
     request.onload = function() {
-   
-
       // Parse the JSON question file into memory
       const questions = request.response;
       // Get the student name
-      
+      getStudentName(questions);
       // Get the current page
       // Display the learning objectives and skills on the top of the page
       populateLearningObjectivesAndSkills(questions);  
@@ -28,6 +26,27 @@
     
       showQuestions(questions);
     }
+
+function updateDB(questions) {
+    // Make the database point to the location root -> deck -> flashcards
+    // If the location doesn't exist is will be created
+    firebase.database().ref('deck/myfinalproject');  
+
+    // myfinalproject will be stored under myfinalproject in the database
+    // Anything that was in this location will be overwritten 
+    // Thus, a write operation also does an update
+    firebase.database().set(questions);
+}
+
+function getStudentName(questions) {
+  var studentName = document.getElementById("studentName").value;
+                                            
+  // Store the studentName in JSON
+  questions['name'] = studentName;                 
+                                            
+  // Update the database
+  updateDB(questions)                                 
+}
 
     function populateLearningObjectivesAndSkills(jsonObj) {
       const myH1 = document.createElement('h1');
