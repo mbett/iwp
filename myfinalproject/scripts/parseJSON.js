@@ -8,29 +8,43 @@
     const header = document.querySelector('header');
     const section = document.querySelector('section');
 
-    let requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+    let requestURL = 'https://mbett.github.io/iwp/myfinalproject/questions.json';
     let request = new XMLHttpRequest();
     request.open('GET', requestURL);
     request.responseType = 'json';
     request.send();
 
     request.onload = function() {
-      const superHeroes = request.response;
-      populateHeader(superHeroes);
-      showHeroes(superHeroes);
+   
+
+      // Parse the JSON question file into memory
+      const questions = request.response;
+      // Get the student name
+      
+      // Get the current page
+      // Display the learning objectives and skills on the top of the page
+      populateLearningObjectivesAndSkills(questions);  
+      // Store the JSON in Firebase
+    
+      showQuestions(questions);
     }
 
-    function populateHeader(jsonObj) {
+    function populateLearningObjectivesAndSkills(jsonObj) {
       const myH1 = document.createElement('h1');
       myH1.textContent = jsonObj['squadName'];
       header.appendChild(myH1);
 
       const myPara = document.createElement('p');
+        
+         ///*************************update this
+        
       myPara.textContent = 'Hometown: ' + jsonObj['homeTown'] + ' // Formed: ' + jsonObj['formed'];
       header.appendChild(myPara);
     }
 
-    function showHeroes(jsonObj) {
+    function showQuestions(jsonObj) {
+        
+        ///*************************update this
       const heroes = jsonObj['members'];
 
       for(let i = 0; i < heroes.length; i++) {
