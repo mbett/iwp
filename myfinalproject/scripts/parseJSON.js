@@ -50,12 +50,15 @@ function startLesson() {
   
   // Store the student's name in the JSON
   questions.students.name = studentName;
-  console.log ('Questions:' + questions );
+  console.log ('Questions:' + JSON.stringify(questions) );
+    
   // Start going through the lesson
-  // Get the current page
+  // Load the first page
+    
   // Display the learning objectives and skills on the top of the page
   populateLearningObjectivesAndSkills(questions);  
-  // Store the JSON in Firebase
+ 
+  // Show the questions
     
   showQuestions(questions);
     
