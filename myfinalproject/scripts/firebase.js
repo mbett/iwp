@@ -25,7 +25,7 @@ function writeStudentAnswers(name, email, answers) {
 }
 
 initializeFirebase();
-writeStudentAnswers("michael","foo@bar.com", ["b","c","e","f"]);
+// writeStudentAnswers("michael","foo@bar.com", ["b","c","e","f"]);
 
 let fc = firebase.database().ref('deck/flashy');
 console.log('Output: ' + fc.toString() );
