@@ -64,8 +64,13 @@ function getStudentName(questions) {
     function showQuestions(jsonObj) {
         
         ///*************************update this
-      const heroes = jsonObj['members'];
-
+    //  const heroes = jsonObj['members'];
+        
+let fc = firebase.database().ref('deck/flashy');
+console.log('Output: ' + fc.toString() );
+console.log('JSON: ' + fc.toJSON() );
+return;
+        
       for(let i = 0; i < heroes.length; i++) {
         const myArticle = document.createElement('article');
         const myH2 = document.createElement('h2');
