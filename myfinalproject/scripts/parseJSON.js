@@ -17,15 +17,9 @@
     let questions;
     request.onload = function() {
       // Parse the JSON question file into memory
-      const questions = request.response;
-      // Get the student name
-     // getStudentName(questions);
-      // Get the current page
-      // Display the learning objectives and skills on the top of the page
-      populateLearningObjectivesAndSkills(questions);  
-      // Store the JSON in Firebase
-    
-      showQuestions(questions);
+      questions = request.response;
+
+
     }
 
 function updateDB(questions) {
@@ -49,19 +43,31 @@ function updateStudentName(studentName, questions) {
     firebase.database().ref('deck/myfinalproject/students/name').set(studentName);
 }
 
-function getStudentName() {
+function startLesson() {
+  
+  // Get the student's name
   let studentName = document.getElementById("studentName").value;
+  
+  // Store the student's name in the JSON
+  
+  // Start going through the lesson
+  // Get the current page
+  // Display the learning objectives and skills on the top of the page
+  populateLearningObjectivesAndSkills(questions);  
+  // Store the JSON in Firebase
+    
+  showQuestions(questions);
     
   // Update the database
   updateStudentName(studentName);                                 
 }
 
-    function populateLearningObjectivesAndSkills(jsonObj) {
-      const myH1 = document.createElement('h1');
-      myH1.textContent = jsonObj['students.name'];
-      header.appendChild(myH1);
+function populateLearningObjectivesAndSkills(jsonObj) {
+   const myH1 = document.createElement('h1');
+   myH1.textContent = jsonObj['students.name'];
+   header.appendChild(myH1);
 
-      const myPara = document.createElement('p');
+   const myPara = document.createElement('p');
         
          ///*************************update this
         
