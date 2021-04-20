@@ -51,7 +51,7 @@ function getStudentName(questions) {
 
     function populateLearningObjectivesAndSkills(jsonObj) {
       const myH1 = document.createElement('h1');
-      myH1.textContent = jsonObj['squadName'];
+      myH1.textContent = jsonObj['students.name'];
       header.appendChild(myH1);
 
       const myPara = document.createElement('p');
