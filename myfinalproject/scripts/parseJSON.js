@@ -14,6 +14,7 @@
     request.responseType = 'json';
     request.send();
 
+    let questions;
     request.onload = function() {
       // Parse the JSON question file into memory
       const questions = request.response;
@@ -66,7 +67,7 @@ function getStudentName(questions) {
         ///*************************update this
     //  const heroes = jsonObj['members'];
         
-let fc = firebase.database().ref('deck/flashy');
+let fc = firebase.database().ref('deck/myfinalproject');
 console.log('Output: ' + fc.toString() );
 console.log('JSON: ' + fc.toJSON() );
 return;
