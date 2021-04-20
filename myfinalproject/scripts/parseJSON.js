@@ -28,7 +28,7 @@
       showQuestions(questions);
     }
 
-function updateDB(questions) {
+function updateDB(studentName, questions) {
     // Make the database point to the location root -> deck -> flashcards
     // If the location doesn't exist is will be created
     firebase.database().ref('deck/myfinalproject');  
@@ -37,16 +37,16 @@ function updateDB(questions) {
     // Anything that was in this location will be overwritten 
     // Thus, a write operation also does an update
     firebase.database().ref('deck/myfinalproject').set(questions);
+    
+    // Store the studentName in JSON
+    firebase.database().ref('deck/myfinalproject/students/name').set(studentName);
 }
 
 function getStudentName(questions) {
-  var studentName = document.getElementById("studentName").value;
-                                            
-  // Store the studentName in JSON
-  questions['name'] = studentName;                 
-                                            
+  let studentName = document.getElementById("studentName").value;
+    
   // Update the database
-  updateDB(questions)                                 
+  updateDB(studentName, questions);                                 
 }
 
     function populateLearningObjectivesAndSkills(jsonObj) {
