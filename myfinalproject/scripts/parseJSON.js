@@ -35,7 +35,7 @@ function updateDB(questions) {
     // myfinalproject will be stored under myfinalproject in the database
     // Anything that was in this location will be overwritten 
     // Thus, a write operation also does an update
-    firebase.database().set(questions);
+    firebase.database().ref('deck/myfinalproject').set(questions);
 }
 
 function getStudentName(questions) {
