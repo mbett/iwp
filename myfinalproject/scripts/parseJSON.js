@@ -68,14 +68,14 @@ function startLesson() {
 
 function populateLearningObjectivesAndSkills(jsonObj) {
    const myH1 = document.createElement('h1');
-   myH1.textContent = jsonObj['students.name'];
+   myH1.textContent = jsonObj.students.name;
    header.appendChild(myH1);
 
    const myPara = document.createElement('p');
         
          ///*************************update this
         
-      myPara.textContent = 'Hometown: ' + jsonObj['homeTown'] + ' // Formed: ' + jsonObj['formed'];
+      myPara.textContent = 'Learning Obvjectives:';
       header.appendChild(myPara);
     }
 
