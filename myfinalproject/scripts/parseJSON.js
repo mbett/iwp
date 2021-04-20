@@ -55,7 +55,7 @@ function startLesson() {
   // Start going through the lesson
   // Load the first page
   // Simulate a mouse click:
-  window.location.href = "../page1.html";
+  window.location.href = "page1.html";
   // Display the learning objectives and skills on the top of the page
   populateLearningObjectivesAndSkills(questions);  
  
