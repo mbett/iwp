@@ -49,7 +49,8 @@ function startLesson() {
   let studentName = document.getElementById("studentName").value;
   
   // Store the student's name in the JSON
-  
+  questions.students.name = studentName;
+  console.log ('Questions:' + questions );
   // Start going through the lesson
   // Get the current page
   // Display the learning objectives and skills on the top of the page
