@@ -10,7 +10,7 @@
     //request.responseType = 'json';
     //request.send();
     let parameters = location.search;
-    let studentName = parameter.substring( parameters.search("user")+5, parameters.length-3 );
+    let studentName = parameter.substring( parameters.search("user")+5, parameters.length-7 );
     let currentPage = pareseInt(parameter.substr(-1, 1));
 console.log("parameters: " + studentName + " page:" + currentPage);
 
