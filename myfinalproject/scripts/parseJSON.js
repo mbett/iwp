@@ -36,11 +36,11 @@ function updateStudentDB(studentName) {
 
 let currentPage;
 
-function loadPage(page, questions, studentName) {
+function loadFirstPage(page, questions, studentName) {
    
   currentPage = page;
   // Simulate a mouse click:
-  window.location.href = "page" + page + ".html?user=" + studentName;
+  window.location.href = "page" + page + ".html?user=" + studentName + "&page=1";
     
       console.log ('Got here:' + JSON.stringify(questions) );
 }
@@ -71,7 +71,7 @@ function startLesson() {
     
   // Start going through the lesson
   // Load the first page
-  loadPage( 1, questions, studentName );
+  loadFirstPage( 1, questions, studentName );
    
   
                         
