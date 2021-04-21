@@ -37,7 +37,7 @@ function updateDB(questions) {
     
 }
 
-function updateStudentName(studentName, questions) {
+function updateStudentName(studentName) {
     // Make the database point to the location root -> deck -> flashcards
     // If the location doesn't exist is will be created
     //firebase.database().ref('deck/myfinalproject/mycourse/'+studentName);  
