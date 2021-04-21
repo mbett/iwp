@@ -34,19 +34,24 @@ function updateStudentDB(studentName) {
 
 }
 
+let currentPage;
+
 function loadPage(page, questions) {
-    
+   
+  currentPage = page;
   // Simulate a mouse click:
   window.location.href = "page" + page + ".html";
     
       console.log ('Got here:' + JSON.stringify(questions) );
-
+    
+    
+function loadCurrentPage() {
     
   // Display the learning objectives and skills on the top of the page 1
-  populateLearningObjectivesAndSkills(page, questions);  
+  populateLearningObjectivesAndSkills(currentPage, questions);  
  
   // Show the questions  
-  showQuestions(page, questions);
+  showQuestions(currentPage, questions);
   
 }    
 
