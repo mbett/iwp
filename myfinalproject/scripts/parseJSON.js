@@ -41,7 +41,7 @@ function updateStudentName(studentName, questions) {
     // Make the database point to the location root -> deck -> flashcards
     // If the location doesn't exist is will be created
     firebase.database().ref('deck/myfinalproject');  
-    
+    console.log('student name' + studentName );
     // Store the updated JSON with the studentName in Firebase
     firebase.database().ref('deck/myfinalproject/mycourse/' + studentName).set(questions);
 //    firebase.database().ref('deck/myfinalproject/mycourse/' + studentName).set(studentName);
