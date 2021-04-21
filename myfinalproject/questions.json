@@ -3,7 +3,7 @@
 		"name": "studentname",
 		"learningObjective": [{
 				"objective": "To learn math",
-				"active": true,
+				"page": 1,
 				"questions": [{
 						"skill": "Add two numbers together",
 						"question": "What is 25 + 4?",
@@ -28,7 +28,7 @@
 			},
 			{
 				"objective": "To learn history",
-				"active": true,
+				"page": 2,
 				"questions": [{
 						"skill": "US history",
 						"question": "What year did the United States declare independence from Britian?",
