@@ -11,7 +11,7 @@
     //request.send();
     let parameters = location.search;
     let studentName = parameters.substring( parameters.search("user")+5, parameters.length-7 );
-    let currentPage = pareseInt(parameters.substr(-1, 1));
+    let currentPage = parseInt(parameters.substr(-1, 1));
 console.log("parameters: " + studentName + " page:" + currentPage);
 
     let questions;
