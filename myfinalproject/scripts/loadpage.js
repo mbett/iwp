@@ -75,6 +75,11 @@ function populateLearningObjectivesAndSkills(questions) {
    header.appendChild(myH1);
 
    // Cycle through the learning objectives and add them to the display
+   const lo = questions.mycourse.learningObjective;
+
+   for(let i = 0; i < lo.length; i++) {
+       console.log( "objective " + lo[i].objective + " for page " + lo[i].page );
+   }
    // Cycle through the skills and add them to the display
    const myPara = document.createElement('p');
         
@@ -93,7 +98,8 @@ let fc = firebase.database().ref('deck/myfinalproject');
 console.log('Output: ' + fc.toString() );
 console.log('JSON: ' + fc.toJSON() );
 return;
-        
+      const heroes = questions['members'];
+
       for(let i = 0; i < heroes.length; i++) {
         const myArticle = document.createElement('article');
         const myH2 = document.createElement('h2');
