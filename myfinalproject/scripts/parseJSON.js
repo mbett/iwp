@@ -50,7 +50,7 @@ function startLesson() {
   // Get the student's name
   let studentName = document.getElementById("studentName").value;
    
-    console.log ('Questions1:' + JSON.stringify(questions) );
+    console.log ('Questions1:' + questions);
   // Store the student's name in the JSON
 //  questions.mycourse.studentName = studentName;
 
