@@ -43,7 +43,7 @@ function loadPage(page, questions) {
   window.location.href = "page" + page + ".html";
     
       console.log ('Got here:' + JSON.stringify(questions) );
-    
+}
     
 function loadCurrentPage() {
     
