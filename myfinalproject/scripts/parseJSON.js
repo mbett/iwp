@@ -42,12 +42,8 @@ function updateStudentName(studentName) {
     // If the location doesn't exist is will be created
     //firebase.database().ref('deck/myfinalproject/mycourse/'+studentName);  
     
-    firebase.database().ref('deck/myfinalproject/mycourse/' + studentName).set({
-    username: studentName,
-    email: "foo@bar.com",
-    answers : "hello",
-    qs : questions
-  });
+    firebase.database().ref('deck/myfinalproject/mycourse/' + studentName).set(questions);
+  
     
     console.log('student name' + studentName );
     // Store the updated JSON with the studentName in Firebase
@@ -65,11 +61,9 @@ function startLesson() {
   // Store the student's name in the JSON
   questions.mycourse.studentName = studentName;
 
-   // Store the intial empty JSON in firebase overwriting the initial empty JSON 
-  firebase.database().ref('deck/myfinalproject').set(questions);
   console.log ('Questions2:' + JSON.stringify(questions) );
   
-  // Update the database
+  // Update the database to store a set of responses for this student
   updateStudentName(studentName);          
     
   // Start going through the lesson
@@ -88,7 +82,7 @@ function startLesson() {
 
 function populateLearningObjectivesAndSkills(jsonObj) {
    const myH1 = document.createElement('h1');
-   myH1.textContent = jsonObj.students.name;
+   myH1.textContent = jsonObj.mycourse.studentName;
    header.appendChild(myH1);
 
    const myPara = document.createElement('p');
