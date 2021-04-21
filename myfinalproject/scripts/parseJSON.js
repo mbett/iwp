@@ -25,41 +25,40 @@
   
     }
 
-function updateDB(questions) {
-    // Make the database point to the location root -> deck -> flashcards
-    // If the location doesn't exist is will be created
-    firebase.database().ref('deck/myfinalproject');  
 
-    // myfinalproject will be stored under myfinalproject in the database
-    // Anything that was in this location will be overwritten 
-    // Thus, a write operation also does an update
-    firebase.database().ref('deck/myfinalproject').set(questions);
-    
-}
-
-function updateStudentName(studentName) {
-    // Make the database point to the location root -> deck -> flashcards
+function updateStudentDB(studentName) {
+    // Make the database point to the location root -> myfinalproject -> mycourse -> studentName
     // If the location doesn't exist is will be created
-    //firebase.database().ref('deck/myfinalproject/mycourse/'+studentName);  
-    
+  
+    // Save the current status
     firebase.database().ref('deck/myfinalproject/mycourse/' + studentName).set(questions);
   
     
-    console.log('student name' + studentName );
-    // Store the updated JSON with the studentName in Firebase
- //   firebase.database().ref('deck/mycourse/' + studentName).set(questions);
-//    firebase.database().ref('deck/myfinalproject/mycourse/' + studentName).set(studentName);
+
 }
+
+fucntion loadPage(page, questions ) {
+    
+  // Simulate a mouse click:
+  window.location.href = "page" + page + ".html";
+    
+  // Display the learning objectives and skills on the top of the page 1
+  populateLearningObjectivesAndSkills(page, questions);  
+ 
+  // Show the questions  
+  showQuestions(page, questions);
+  
+}    
 
 function startLesson() {
   
     
   // Get the student's name
-  let studentName = document.getElementById("studentName").value;
+  let studentName = document.getElementById("student").value;
    
   
   // Store the student's name in the JSON
-  questions.mycourse.studentName = studentName;
+  questions.mycourse.student = studentName;
 
   console.log ('Questions2:' + JSON.stringify(questions) );
   
@@ -68,30 +67,26 @@ function startLesson() {
     
   // Start going through the lesson
   // Load the first page
-  // Simulate a mouse click:
-//  window.location.href = "page1.html";
-  // Display the learning objectives and skills on the top of the page
-  populateLearningObjectivesAndSkills(questions);  
- 
-  // Show the questions
-    
-  showQuestions(questions);
-    
+  loadPage( 1, questions );
+   
+  
                         
 }
 
-function populateLearningObjectivesAndSkills(jsonObj) {
+function populateLearningObjectivesAndSkills(questions) {
    const myH1 = document.createElement('h1');
-   myH1.textContent = jsonObj.mycourse.studentName;
+   myH1.textContent = questions.mycourse.student;
    header.appendChild(myH1);
 
+   // Cycle through the learning objectives and add them to the display
+   // Cycle through the skills and add them to the display
    const myPara = document.createElement('p');
         
          ///*************************update this
         
       myPara.textContent = 'Learning Obvjectives:';
       header.appendChild(myPara);
-    }
+}
 
 function showQuestions(jsonObj) {
         
