@@ -63,7 +63,7 @@ function startLesson() {
   console.log ('Questions2:' + JSON.stringify(questions) );
   
   // Update the database to store a set of responses for this student
-  updateStudentName(studentName);          
+  updateStudentDB(studentName);          
     
   // Start going through the lesson
   // Load the first page
