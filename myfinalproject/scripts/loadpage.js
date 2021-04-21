@@ -10,7 +10,7 @@
     //request.responseType = 'json';
     //request.send();
     let parameters = location.search;
-console.log('parameters: " + parameters);
+console.log("parameters: " + parameters);
 
     let questions;
     //request.onload = function() {
