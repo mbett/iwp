@@ -14,7 +14,16 @@
     let currentPage = parseInt(parameters.substr(-1, 1));
 console.log("parameters: " + studentName + " page:" + currentPage);
 
-    let questions;
+let firebase.database().ref('deck/myfinalproject/mycourse/' + studentName).set(questions);
+let questions;
+
+fc.on("value", function(retrieve) {
+    let queryData = retrieve.val();
+    console.log('With name JSON:' + JSON.stringify(queryData) );
+    questions = JSON.stringify(queryData);
+});
+
+
     //request.onload = function() {
     // Parse the JSON question file into memory
  //   questions = request.response;
@@ -57,33 +66,12 @@ function loadCurrentPage() {
   
 }    
 
-function startLesson() {
-  
-    
-  // Get the student's name
-  let studentName = document.getElementById("studentName").value;
-  
-  // Store the student's name in the JSON
-  questions.mycourse.student = studentName;
-
-  console.log ('Questions2:' + JSON.stringify(questions) );
-  
-  // Update the database to store a set of responses for this student
-  updateStudentDB(studentName);          
-    
-  // Start going through the lesson
-  // Load the first page
-  loadPage( 1, questions );
-   
-  
-                        
-}
 
 function populateLearningObjectivesAndSkills(questions) {
    const header = document.querySelector('header');
    const section = document.querySelector('section');
    const myH1 = document.createElement('h1');
-   myH1.textContent = questions.mycourse.student;
+   myH1.textContent = studentName;
    header.appendChild(myH1);
 
    // Cycle through the learning objectives and add them to the display
