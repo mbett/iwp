@@ -23,7 +23,7 @@
 						"answer": 100,
 						"questionType": "short answer",
 						"selectedAnswers": [],
-						"distractor": []
+						"distractor": [],
 						"hint": "Incorrect: It is more than 99 and less than 101."
 					}
 				]
@@ -41,7 +41,7 @@
 							"1492",
 							"1619",
 							"1861"
-						]
+						],
 					        "hint": "Incorrect: It is was before 1800."
 					},
 					{
@@ -50,7 +50,7 @@
 						"answer": "Lincoln",
 						"questionType": "short answer",
 						"selectedAnswers": [],
-						"distractor": []
+						"distractor": [],
 						"hint": "Incorrect: Their first name was Abe."
 					}
 				]
