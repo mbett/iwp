@@ -17,7 +17,7 @@
     let questions;
     request.onload = function() {
       // Parse the JSON question file into memory
-     const questions = request.response;
+    questions = request.response;
       
 console.log ('QuestionsA:' + questions);
  console.log ('QuestionsB:' + JSON.stringify(questions) );
