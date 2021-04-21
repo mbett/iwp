@@ -18,7 +18,9 @@
     request.onload = function() {
       // Parse the JSON question file into memory
       questions = request.response;
-
+      
+      // Store the intial empty JSON in firebase overwriting the initial empty JSON 
+      firebase.database().ref('deck/myfinalproject').set(questions);
 
     }
 
