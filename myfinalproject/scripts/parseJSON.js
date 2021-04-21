@@ -5,9 +5,6 @@
 // Listen for answers
 // Record answers and display Correct or hints.
 
-    const header = document.querySelector('header');
-    const section = document.querySelector('section');
-
     let requestURL = 'https://mbett.github.io/iwp/myfinalproject/questions.json';
     let request = new XMLHttpRequest();
     request.open('GET', requestURL);
@@ -42,6 +39,9 @@ function loadPage(page, questions) {
   // Simulate a mouse click:
   window.location.href = "page" + page + ".html";
     
+      console.log ('Got here:' + JSON.stringify(questions) );
+
+    
   // Display the learning objectives and skills on the top of the page 1
   populateLearningObjectivesAndSkills(page, questions);  
  
@@ -55,7 +55,6 @@ function startLesson() {
     
   // Get the student's name
   let studentName = document.getElementById("studentName").value;
-   
   
   // Store the student's name in the JSON
   questions.mycourse.student = studentName;
@@ -74,6 +73,8 @@ function startLesson() {
 }
 
 function populateLearningObjectivesAndSkills(questions) {
+   const header = document.querySelector('header');
+   const section = document.querySelector('section');
    const myH1 = document.createElement('h1');
    myH1.textContent = questions.mycourse.student;
    header.appendChild(myH1);
