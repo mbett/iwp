@@ -45,7 +45,8 @@ function updateStudentName(studentName, questions) {
     firebase.database().ref('deck/myfinalproject/mycourse/' + studentName).set({
     username: studentName,
     email: "foo@bar.com",
-    answers : "hello"
+    answers : "hello",
+    qs : questions
   });
     
     console.log('student name' + studentName );
