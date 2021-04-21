@@ -10,7 +10,9 @@
     //request.responseType = 'json';
     //request.send();
     let parameters = location.search;
-console.log("parameters: " + parameters);
+    let studentName = parameter.substring( parameters.search("user")+5, parameters.length-3 );
+    let currentPage = pareseInt(parameter.substr(-1, 1));
+console.log("parameters: " + studentName + " page:" + currentPage);
 
     let questions;
     //request.onload = function() {
@@ -34,7 +36,7 @@ function updateStudentDB(studentName) {
 
 }
 
-let currentPage;
+
 
 function loadPage(page, questions) {
    
