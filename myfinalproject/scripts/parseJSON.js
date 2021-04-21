@@ -18,7 +18,7 @@
     questions = request.response;
     
     // Store the intial JSON with no student name or answers in firebase overwriting the initial empty JSON 
-    firebase.database().ref('deck/myfinalproject').set(questions);
+    firebase.database().ref('deck/myfinalproject/nostudent').set(questions);
   
     }
 
