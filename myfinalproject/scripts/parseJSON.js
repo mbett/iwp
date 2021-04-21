@@ -50,7 +50,7 @@ function startLesson() {
   let studentName = document.getElementById("studentName").value;
   
   // Store the student's name in the JSON
-  questions.students.name = studentName;
+  questions.mycourse.studentName = studentName;
   console.log ('Questions:' + JSON.stringify(questions) );
     
   // Start going through the lesson
@@ -81,7 +81,7 @@ function populateLearningObjectivesAndSkills(jsonObj) {
       header.appendChild(myPara);
     }
 
-    function showQuestions(jsonObj) {
+function showQuestions(jsonObj) {
         
         ///*************************update this
     //  const heroes = jsonObj['members'];
