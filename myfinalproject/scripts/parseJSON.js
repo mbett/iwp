@@ -16,11 +16,13 @@
 
     let questions;
     request.onload = function() {
-      // Parse the JSON question file into memory
+    
+    // Parse the JSON question file into memory
     questions = request.response;
-      
-console.log ('QuestionsA:' + questions);
- console.log ('QuestionsB:' + JSON.stringify(questions) );
+    
+    // Store the intial JSON with no student name or answers in firebase overwriting the initial empty JSON 
+    firebase.database().ref('deck/myfinalproject').set(questions);
+  
     }
 
 function updateDB(questions) {
@@ -40,7 +42,7 @@ function updateStudentName(studentName, questions) {
     // If the location doesn't exist is will be created
     firebase.database().ref('deck/myfinalproject');  
     
-    // Store the studentName in JSON
+    // Store the updated JSON with the studentName in Firebase
     firebase.database().ref('deck/myfinalproject/mycourse/' + studentName).set(questions);
 //    firebase.database().ref('deck/myfinalproject/mycourse/' + studentName).set(studentName);
 }
@@ -51,11 +53,11 @@ function startLesson() {
   // Get the student's name
   let studentName = document.getElementById("studentName").value;
    
-    console.log ('Questions1:' + questions);
+  
   // Store the student's name in the JSON
-//  questions.mycourse.studentName = studentName;
+  questions.mycourse.studentName = studentName;
 
-    // Store the intial empty JSON in firebase overwriting the initial empty JSON 
+   // Store the intial empty JSON in firebase overwriting the initial empty JSON 
   firebase.database().ref('deck/myfinalproject').set(questions);
   console.log ('Questions2:' + JSON.stringify(questions) );
     
