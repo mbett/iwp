@@ -14,7 +14,7 @@
     let currentPage = parseInt(parameters.substr(-1, 1));
 console.log("parameters: " + studentName + " page:" + currentPage);
 
-let fc = firebase.database().ref('deck/myfinalproject/mycourse/' + studentName);
+fc = firebase.database().ref('deck/myfinalproject/mycourse/' + studentName);
 let questions;
 
 fc.on("value", function(retrieve) {
