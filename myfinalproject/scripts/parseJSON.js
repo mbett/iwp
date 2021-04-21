@@ -42,7 +42,7 @@ function updateStudentName(studentName, questions) {
     // If the location doesn't exist is will be created
     //firebase.database().ref('deck/myfinalproject/mycourse/'+studentName);  
     
-    firebase.database().ref('ohmy/' + studentName).set({
+    firebase.database().ref('deck/myfinalproject/mycourse/' + studentName).set({
     username: studentName,
     email: "foo@bar.com",
     answers : "hello"
