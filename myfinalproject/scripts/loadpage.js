@@ -75,7 +75,7 @@ function populateLearningObjectivesAndSkills(questions) {
    header.appendChild(myH1);
 
    // Cycle through the learning objectives and add them to the display
-   const lo = questions.mycourse["learningObjective"];
+   const lo = questions.mycourse['learningObjective'];
 
    for(let i = 0; i < lo.length; i++) {
        console.log( "objective " + lo[i].objective + " for page " + lo[i].page );
