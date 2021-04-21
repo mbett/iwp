@@ -4,22 +4,23 @@
 // Listen for answers
 // Record answers and display Correct or hints.
 
-    let requestURL = 'https://mbett.github.io/iwp/myfinalproject/questions.json';
-    let request = new XMLHttpRequest();
-    request.open('GET', requestURL);
-    request.responseType = 'json';
-    request.send();
+    //let requestURL = 'https://mbett.github.io/iwp/myfinalproject/questions.json';
+    //let request = new XMLHttpRequest();
+    //request.open('GET', requestURL);
+    //request.responseType = 'json';
+    //request.send();
+    let parameters = location.search;
+console.log('parameters: " + parameters);
 
     let questions;
-    request.onload = function() {
-    
+    //request.onload = function() {
     // Parse the JSON question file into memory
-    questions = request.response;
+ //   questions = request.response;
     
     // Store the intial JSON with no student name or answers in firebase overwriting the initial empty JSON 
-    firebase.database().ref('deck/myfinalproject').set(questions);
+//    firebase.database().ref('deck/myfinalproject').set(questions);
   
-    }
+//    }
 
 
 function updateStudentDB(studentName) {
