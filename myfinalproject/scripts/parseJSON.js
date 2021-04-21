@@ -40,7 +40,8 @@ function updateStudentName(studentName, questions) {
     firebase.database().ref('deck/myfinalproject');  
     
     // Store the studentName in JSON
-    firebase.database().ref('deck/myfinalproject/students/name').set(studentName);
+    firebase.database().ref('deck/myfinalproject/mycourse/' + studentName).set(questions);
+//    firebase.database().ref('deck/myfinalproject/mycourse/' + studentName).set(studentName);
 }
 
 function startLesson() {
