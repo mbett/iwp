@@ -20,7 +20,7 @@ let questions;
 fc.on("value", function(retrieve) {
     let queryData = retrieve.val();
     console.log('With name JSON:' + JSON.stringify(queryData) );
-    questions = JSON.stringify(queryData);
+    questions = queryData;
 });
 
 
