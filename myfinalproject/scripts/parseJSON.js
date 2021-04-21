@@ -19,8 +19,6 @@
       // Parse the JSON question file into memory
       questions = request.response;
       
-      // Store the intial empty JSON in firebase overwriting the initial empty JSON 
-      firebase.database().ref('deck/myfinalproject').set(questions);
 
     }
 
@@ -48,12 +46,17 @@ function updateStudentName(studentName, questions) {
 
 function startLesson() {
   
+    
   // Get the student's name
   let studentName = document.getElementById("studentName").value;
-  
+   
+    console.log ('Questions1:' + JSON.stringify(questions) );
   // Store the student's name in the JSON
-  questions.mycourse.studentName = studentName;
-  console.log ('Questions:' + JSON.stringify(questions) );
+//  questions.mycourse.studentName = studentName;
+
+    // Store the intial empty JSON in firebase overwriting the initial empty JSON 
+  firebase.database().ref('deck/myfinalproject').set(questions);
+  console.log ('Questions2:' + JSON.stringify(questions) );
     
   // Start going through the lesson
   // Load the first page
