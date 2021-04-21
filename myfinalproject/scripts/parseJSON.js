@@ -37,7 +37,7 @@ function updateStudentDB(studentName) {
 
 }
 
-fucntion loadPage(page, questions ) {
+function loadPage(page, questions) {
     
   // Simulate a mouse click:
   window.location.href = "page" + page + ".html";
