@@ -60,11 +60,14 @@ function startLesson() {
    // Store the intial empty JSON in firebase overwriting the initial empty JSON 
   firebase.database().ref('deck/myfinalproject').set(questions);
   console.log ('Questions2:' + JSON.stringify(questions) );
+  
+  // Update the database
+  updateStudentName(studentName);          
     
   // Start going through the lesson
   // Load the first page
   // Simulate a mouse click:
-  window.location.href = "page1.html";
+//  window.location.href = "page1.html";
   // Display the learning objectives and skills on the top of the page
   populateLearningObjectivesAndSkills(questions);  
  
@@ -72,8 +75,7 @@ function startLesson() {
     
   showQuestions(questions);
     
-  // Update the database
-  updateStudentName(studentName);                                 
+                        
 }
 
 function populateLearningObjectivesAndSkills(jsonObj) {
