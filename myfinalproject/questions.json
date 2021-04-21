@@ -1,6 +1,6 @@
 {
-	"students": {
-		"name": "studentname",
+	"mycourse": {
+		"student": "studentname",
 		"learningObjective": [{
 				"objective": "To learn math",
 				"page": 1,
@@ -14,7 +14,8 @@
 							"Radiation resistance",
 							"Turning tiny",
 							"Radiation blast"
-						]
+						],
+						"hint": "Incorrect: It is more than 28 and less than 30."
 					},
 					{
 						"skill": "Multiply two numbers together",
@@ -23,6 +24,7 @@
 						"questionType": "short answer",
 						"selectedAnswers": [],
 						"distractor": []
+						"hint": "Incorrect: It is more than 99 and less than 101."
 					}
 				]
 			},
@@ -36,18 +38,20 @@
 						"questionType": "multiple choice",
 						"selectedAnswers": [],
 						"distractor": [
-							"Radiation resistance",
-							"Turning tiny",
-							"Radiation blast"
+							"1492",
+							"1619",
+							"1861"
 						]
+					        "hint": "Incorrect: It is was before 1800."
 					},
 					{
 						"skill": "presidents of the US",
-						"question": "Who was President during the civil war?",
+						"question": "What was the last name of U.S. President during the civil war?",
 						"answer": "Lincoln",
 						"questionType": "short answer",
 						"selectedAnswers": [],
 						"distractor": []
+						"hint": "Incorrect: Their first name was Abe."
 					}
 				]
 			}
