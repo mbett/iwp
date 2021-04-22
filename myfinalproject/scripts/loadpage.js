@@ -80,17 +80,40 @@ function populateLearningObjectivesAndSkills(page, studentName, questions) {
 
    // Cycle through the learning objectives and add them to the display
    const lo = questions.mycourse.learningObjective;
+   const myPara = document.createElement('p');
+   myPara.textContent = 'Learning Obvjectives:<br/>';
 
+   let firstObjective = true;
    for(let i = 0; i < lo.length; i++) {
        console.log( "objective " + lo[i].objective + " for page " + lo[i].page );
+       if (lo[i].page == page) {
+           if (firstObjective == true ) {
+               firstObjective = false;
+               myPara.textContent += '<ul>';
+           } 
+ 
+        myPara.textContent += '<li>'+ lo[i].objective + '</li>';
+
+       // Cycle through the skills and add them to the display
+       const skill = lo[i].questions;
+       let firstSkill = true;
+       for(let j = 0; j < skill.length; j++) {
+          if (firstSkill == true ) {
+               firstSkill = false;
+               myPara.textContent += '<ul>';
+          } 
+          myPara.textContent += '<li>' + skill[j].skill + '</li>';     
+       }
+       // Close the skill list    
+       if (firstSkill == false )      
+          myPara.textContent += '</ul>';
    }
-   // Cycle through the skills and add them to the display
-   const myPara = document.createElement('p');
-        
-         ///*************************update this
-        
-      myPara.textContent = 'Learning Obvjectives:';
-      header.appendChild(myPara);
+   
+   // Close the objective list    
+   if (firstObjective == false )      
+       myPara.textContent += '</ul>';
+
+   header.appendChild(myPara);      
 }
 
 function showQuestions(page, studentName, questions) {
