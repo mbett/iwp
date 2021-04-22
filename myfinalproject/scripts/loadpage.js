@@ -107,6 +107,11 @@ function populateLearningObjectivesAndSkills(page, studentName, studentCourseDat
    header.innerHTML = myPara;    
 }
 
+
+function checkAnswer(questionid, answer) {
+    console.log("Check " + questionid + " with answer " + answer);
+}
+
 function showQuestion(number, question) {
         
    console.log('***********Question:' + JSON.stringify(question) + '===>' + question.answer );
@@ -117,18 +122,21 @@ function showQuestion(number, question) {
    { 
         console.log('=======MCQ:' + html + '  type :' + type );
        //multiple choice
-       html += "Choose one of the following:<br/><br/>";
+       html += "Choose one of the following:<br/><br/><form>";
+       
        // print the distractors
        const distractor = question.distractor;
        for (i=0; i < distractor.length; ++i) {
-           html += distractor[i] + "<br/>";
+           html +="<input type="radio" name="${number}" onclick="checkAnswer(${number}, ${distractor[i]})" value="${distractor[i]}> + "<br/>";
        }
-       html += question.answer + "<br/>";
+       html += question.answer + "</form><br/>";
    } else {
         console.log('=====Short Q:' + html + '  type :' + type );
        // short answer
        // create a text input box
        html += "Enter your answer:<br/><br/>  <input type=\"text\" id=\"q" + number + "\" name=\"q" + number + "\" required>";
+       <button onclick="checkAnswer(${number}, \"some text\")>Submit</button>
+
    }
    // Add a final line break;
    html += "<br/>";
