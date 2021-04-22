@@ -19,8 +19,9 @@ let questions;
 
 fc.on("value", function(retrieve) {
     let queryData = retrieve.val();
-    console.log('With name JSON:' + JSON.stringify(queryData) );
     questions = queryData;
+    console.log('********************With name JSON:' + JSON.stringify(questions) );
+
 });
 
 
@@ -67,7 +68,7 @@ function loadCurrentPage() {
 }    
 
 
-function populateLearningObjectivesAndSkills(questions) {
+function populateLearningObjectivesAndSkills(page, questions) {
    const header = document.querySelector('header');
    const section = document.querySelector('section');
    const myH1 = document.createElement('h1');
