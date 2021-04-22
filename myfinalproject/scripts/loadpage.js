@@ -20,8 +20,6 @@ let questions;
 fc.on("value", function(retrieve) {
     let queryData = retrieve.val();
     questions = queryData;
-    console.log('********************With name JSON:' + JSON.stringify(questions) );
-
 });
 
 
@@ -75,8 +73,10 @@ function populateLearningObjectivesAndSkills(page, questions) {
    myH1.textContent = studentName;
    header.appendChild(myH1);
 
+   console.log('********************Wih name JSON:' + JSON.stringify(questions) );
+
    // Cycle through the learning objectives and add them to the display
-   const lo = questions.mycourse['learningObjective'];
+   const lo = questions.mycourse.learningObjective;
 
    for(let i = 0; i < lo.length; i++) {
        console.log( "objective " + lo[i].objective + " for page " + lo[i].page );
