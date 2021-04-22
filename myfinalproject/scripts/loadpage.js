@@ -58,10 +58,10 @@ function loadCurrentPage() {
     let questions = retrieve.val();
 
     // Display the learning objectives and skills on the top of the page 1
-    populateLearningObjectivesAndSkills(currentPage, questions);  
+    populateLearningObjectivesAndSkills(currentPage, studentName, questions);  
  
     // Show the questions  
-    showQuestions(currentPage, questions);
+    showQuestions(currentPage, studentName, questions);
   
   });
     
@@ -69,7 +69,7 @@ function loadCurrentPage() {
 }    
 
 
-function populateLearningObjectivesAndSkills(page, questions) {
+function populateLearningObjectivesAndSkills(page, studentName, questions) {
    const header = document.querySelector('header');
    const section = document.querySelector('section');
    const myH1 = document.createElement('h1');
@@ -93,14 +93,18 @@ function populateLearningObjectivesAndSkills(page, questions) {
       header.appendChild(myPara);
 }
 
-function showQuestions(jsonObj) {
+function showQuestions(page, studentName, questions) {
         
+    
+    
+       console.log('====================Wih name JSON:' + JSON.stringify(questions) );
+
         ///*************************update this
     //  const heroes = jsonObj['members'];
         
-let fc = firebase.database().ref('deck/myfinalproject');
-console.log('Output: ' + fc.toString() );
-console.log('JSON: ' + fc.toJSON() );
+//let fc = firebase.database().ref('deck/myfinalproject');
+//console.log('Output: ' + fc.toString() );
+//console.log('JSON: ' + fc.toJSON() );
 return;
       const heroes = questions['members'];
 
