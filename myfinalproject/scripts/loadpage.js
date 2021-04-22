@@ -127,16 +127,16 @@ function showQuestion(number, question) {
        // print the distractors
        const distractor = question.distractor;
        for (i=0; i < distractor.length; ++i) {
-           html +='<input type="radio" name="' + i + '" onchange=checkAnswer(5, 10) value="' + distractor[i] + '">' + distractor[i] + ' <br/>';
+           html +='<input type="radio" name="' + i + '" onchange="checkAnswer(5, 10)" value="' + distractor[i] + '">' + distractor[i] + ' <br/>';
       }
-       html +='<input type="radio" name="' + distractor.length + '" onchange=checkAnswer("' + number + '", "' + question.answer + '") value="' + question.answer + '">' + question.answer + ' <br/>';
+       html +='<input type="radio" name="mc1" onchange="checkAnswer("' + number + '", "' + question.answer + '")" value="' + question.answer + '">' + question.answer + ' <br/>';
 
        html += "</form><br/>";
    } else {
         console.log('=====Short Q:' + html + '  type :' + type );
        // short answer
        // create a text input box
-       html += 'Enter your answer:<br/><br/>  <input type="text" id="q' + number + '" name="q' + number + '" required> <button onclick=checkAnswer(' + number + ', "some text")>Submit</button><br/>';
+       html += 'Enter your answer:<br/><br/>  <input type="text" id="q' + number + '" name="q' + number + '" required> <button onclick="checkAnswer(' + number + ', "some text")">Submit</button><br/>';
    }
    // Add a final line break;
    html += "<br/>";
