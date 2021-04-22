@@ -117,17 +117,18 @@ function showQuestion(number, question) {
    { 
         console.log('=======MCQ:' + html + '  type :' + type );
        //multiple choice
-       html += "Choose one of the following:<br/>";
-       // Have to declare as const to get access to the value?
+       html += "Choose one of the following:<br/><br/>";
+       // print the distractors
        const distractor = question.distractor;
        for (i=0; i < distractor.length; ++i) {
            html += distractor[i] + "<br/>";
        }
+       html += question.answer + "<br/>";
    } else {
         console.log('=====Short Q:' + html + '  type :' + type );
        // short answer
        // create a text input box
-       html += "Enter your answer:<br/>  <input type=\"text\" id=\"q" + number + "\" name=\"q" + number + "\" required>";
+       html += "Enter your answer:<br/><br/>  <input type=\"text\" id=\"q" + number + "\" name=\"q" + number + "\" required>";
    }
    // Add a final line break;
    html += "<br/>";
