@@ -52,8 +52,6 @@ function loadCurrentPage() {
   console.log("parameters: " + studentName + " page:" + currentPage);
 
   fc = firebase.database().ref('deck/myfinalproject/mycourse/' + studentName);
-  let questions;
-
   fc.on("value", function(retrieve) {
     let questions = retrieve.val();
 
@@ -92,22 +90,23 @@ function populateLearningObjectivesAndSkills(page, studentName, questions) {
                myPara.textContent += '<ul>';
            } 
  
-        myPara.textContent += '<li>'+ lo[i].objective + '</li>';
-
-       // Cycle through the skills and add them to the display
-       const skill = lo[i].questions;
-       let firstSkill = true;
-       for(let j = 0; j < skill.length; j++) {
-          if (firstSkill == true ) {
-               firstSkill = false;
-               myPara.textContent += '<ul>';
-          } 
-          myPara.textContent += '<li>' + skill[j].skill + '</li>';     
-       }
-       // Close the skill list    
-       if (firstSkill == false )      
-          myPara.textContent += '</ul>';
-   }
+           myPara.textContent += '<li>'+ lo[i].objective + '</li>';
+       
+           // Cycle through the skills and add them to the display
+           const skill = lo[i].questions;
+           let firstSkill = true;
+           for(let j = 0; j < skill.length; j++) {
+              if (firstSkill == true ) {
+                  firstSkill = false;
+                  myPara.textContent += '<ul>';
+              } 
+              myPara.textContent += '<li>' + skill[j].skill + '</li>';     
+           } //end for
+           // Close the skill list    
+           if (firstSkill == false )      
+             myPara.textContent += '</ul>';
+       } // end if (lo[i].page == page) 
+   } //end for
    
    // Close the objective list    
    if (firstObjective == false )      
