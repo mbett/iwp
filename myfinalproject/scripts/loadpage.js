@@ -108,9 +108,7 @@ function populateLearningObjectivesAndSkills(page, studentName, studentCourseDat
 }
 
 function showQuestion(question) {
-    
-    let html = question.question;
-    
+        
    console.log('***********Question:' + JSON.stringify(question) );
    
    let html = question.question + "<br/>";
