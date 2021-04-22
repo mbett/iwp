@@ -111,9 +111,9 @@ function showQuestion(question) {
         
    console.log('***********Question:' + JSON.stringify(question) );
    
-   let html = question.question + "<br/>";
+   let html = "<br/>" + question.question + "<br/>";
    let type = question.questionType;
-   if (type == "Multiple Choice")  // strings match
+   if (type == "multiple Choice")  // strings match
    { 
         console.log('=======MCQ:' + html + '  type :' + type );
        //multiple choice
@@ -127,6 +127,8 @@ function showQuestion(question) {
        // create a text input box
        html += "Answer:  <input type=\"text\" id=\"q1\" name=\"q1\" required>";
    }
+   // Add a final line break;
+   html += "<br/>";
    return html;
 }
     
