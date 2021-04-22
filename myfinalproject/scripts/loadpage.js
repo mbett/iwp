@@ -131,7 +131,7 @@ function showQuestions(page, studentName, studentCourseData) {
    const section = document.querySelector('section');
    
  
-       console.log('====================Wih name JSON:' + JSON.stringify(questions) );
+   // console.log('====================Wih name JSON:' + JSON.stringify(studentCourseData) );
    
    // Cycle through the learning objectives and add them to the display
    const lo = studentCourseData.mycourse.learningObjective;
