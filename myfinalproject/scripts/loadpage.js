@@ -127,9 +127,9 @@ function showQuestion(number, question) {
        // print the distractors
        const distractor = question.distractor;
        for (i=0; i < distractor.length; ++i) {
-           html +='<input type="radio" name=" + number + " onclick=checkAnswer(" + number + ", " + distractor[i] + ") value=" + distractor[i] "> <br/>';
+           html +='<input type="radio" name=" + number + " onclick=checkAnswer(" + number + ", " + distractor[i] + ") value=" + distractor[i] ">' + distractor[i] + ' <br/>';
        }
-       html +='<input type="radio" name=" + number + " onclick=checkAnswer(" + number + ", " + question.answer + ") value=" + question.answer "> <br/>';
+       html +='<input type="radio" name=" + number + " onclick=checkAnswer(" + number + ", " + question.answer + ") value=" + question.answer ">' + question.answer + ' <br/>';
 
        html += "</form><br/>";
    } else {
