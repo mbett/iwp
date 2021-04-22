@@ -112,11 +112,14 @@ function showQuestion(question) {
    console.log('***********Question:' + JSON.stringify(question) );
    
    let html = question.question + "<br/>";
-   if (question.questionType.localCompare("Multiple Choice") == 0) // strings match
+   let type = question.questionType;
+   if (type.localCompare("Multiple Choice") == 0) // strings match
    { 
        //multiple choice
        html += "Choose one of the following:<br/>";  
-
+       for (i=0; i < question.destractor.length; ++i) {
+           html += question.destractor[i] + "<br/>";
+       }
    } else {
        // short answer
        // create a text input box
