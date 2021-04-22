@@ -37,6 +37,6 @@ let fc = firebase.database().ref('deck/myfinalproject');
 // Retrieve and print out the JSON string to the console
 fc.on("value", function(retrieve) {
     let queryData = retrieve.val();
-    console.log('Real JSON:' + JSON.stringify(queryData) );
+//    console.log('Real JSON:' + JSON.stringify(queryData) );
     qd = JSON.stringify(queryData);
 });
