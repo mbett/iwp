@@ -9,18 +9,7 @@
     //request.open('GET', requestURL);
     //request.responseType = 'json';
     //request.send();
-    let parameters = location.search;
-    let studentName = parameters.substring( parameters.search("user")+5, parameters.length-7 );
-    let currentPage = parseInt(parameters.substr(-1, 1));
-console.log("parameters: " + studentName + " page:" + currentPage);
 
-fc = firebase.database().ref('deck/myfinalproject/mycourse/' + studentName);
-let questions;
-
-fc.on("value", function(retrieve) {
-    let queryData = retrieve.val();
-    questions = queryData;
-});
 
 
     //request.onload = function() {
@@ -56,13 +45,27 @@ function loadPage(page, questions) {
 }
     
 function loadCurrentPage() {
-    
-  // Display the learning objectives and skills on the top of the page 1
-  populateLearningObjectivesAndSkills(currentPage, questions);  
+      
+  let parameters = location.search;
+  let studentName = parameters.substring( parameters.search("user")+5, parameters.length-7 );
+  let currentPage = parseInt(parameters.substr(-1, 1));
+  console.log("parameters: " + studentName + " page:" + currentPage);
+
+  fc = firebase.database().ref('deck/myfinalproject/mycourse/' + studentName);
+  let questions;
+
+  fc.on("value", function(retrieve) {
+    let questions = retrieve.val();
+
+    // Display the learning objectives and skills on the top of the page 1
+    populateLearningObjectivesAndSkills(currentPage, questions);  
  
-  // Show the questions  
-  showQuestions(currentPage, questions);
+    // Show the questions  
+    showQuestions(currentPage, questions);
   
+  });
+    
+ 
 }    
 
 
