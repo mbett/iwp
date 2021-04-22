@@ -61,7 +61,7 @@ function populateLearningObjectivesAndSkills(page, studentName, questions) {
 
    // Cycle through the learning objectives and add them to the display
    const lo = questions.mycourse.learningObjective;
-   const myPara // = document.createElement('p');
+   let myPara // = document.createElement('p');
  = 'Learning Obvjectives:<br/>';
 
    let firstObjective = true;
