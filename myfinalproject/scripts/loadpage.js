@@ -127,16 +127,14 @@ function showQuestion(number, question) {
        // print the distractors
        const distractor = question.distractor;
        for (i=0; i < distractor.length; ++i) {
-           html +="<input type="radio" name="${number}" onclick="checkAnswer(${number}, ${distractor[i]})" value="${distractor[i]}> + "<br/>";
+           html +="<input type=\"radio\" name=\"${number}\" onclick=\"checkAnswer(${number}, ${distractor[i]})\" value=\"${distractor[i]}> <br/>";
        }
        html += question.answer + "</form><br/>";
    } else {
         console.log('=====Short Q:' + html + '  type :' + type );
        // short answer
        // create a text input box
-       html += "Enter your answer:<br/><br/>  <input type=\"text\" id=\"q" + number + "\" name=\"q" + number + "\" required>";
-       <button onclick="checkAnswer(${number}, \"some text\")>Submit</button>
-
+       html += "Enter your answer:<br/><br/>  <input type=\"text\" id=\"q" + number + "\" name=\"q" + number + "\" required>" + "<button onclick=\"checkAnswer(${number}, \"some text\")>Submit</button><br/>";
    }
    // Add a final line break;
    html += "<br/>";
