@@ -113,15 +113,16 @@ function showQuestion(question) {
    
    let html = question.question + "<br/>";
    let type = question.questionType;
-     console.log('***********Q:' + html + '  type :' + type );
    if (type == "Multiple Choice")  // strings match
    { 
+        console.log('=======MCQ:' + html + '  type :' + type );
        //multiple choice
        html += "Choose one of the following:<br/>";  
        for (i=0; i < question.destractor.length; ++i) {
            html += question.destractor[i] + "<br/>";
        }
    } else {
+        console.log('=====Short Q:' + html + '  type :' + type );
        // short answer
        // create a text input box
        html += "Answer:  <input type=\"text\" id=\"q1\" name=\"q1\" required>";
@@ -154,7 +155,8 @@ function showQuestions(page, studentName, studentCourseData) {
        } // end if (lo[i].page == page) 
    } //end for
     
-   header.innerHTML = myPara; 
+   section.innerHTML = myPara; 
+    
    return;
     
     
