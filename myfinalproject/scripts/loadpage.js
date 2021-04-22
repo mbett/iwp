@@ -109,11 +109,11 @@ function populateLearningObjectivesAndSkills(page, studentName, studentCourseDat
 
 function showQuestion(number, question) {
         
-   console.log('***********Question:' + JSON.stringify(question) );
+   console.log('***********Question:' + JSON.stringify(question) + '===>' + question.question );
    
    let html = "<br/>" + question.question + "<br/>";
    let type = question.questionType;
-   if (type == "multiple Choice")  // strings match
+   if (type == "multiple choice")  // strings match
    { 
         console.log('=======MCQ:' + html + '  type :' + type );
        //multiple choice
@@ -125,7 +125,7 @@ function showQuestion(number, question) {
         console.log('=====Short Q:' + html + '  type :' + type );
        // short answer
        // create a text input box
-       html += "Answer:  <input type=\"text\" id=\"q" + number + "\" name=\"q" + number + "\" required>";
+       html += "Enter your answer:<br/>  <input type=\"text\" id=\"q" + number + "\" name=\"q" + number + "\" required>";
    }
    // Add a final line break;
    html += "<br/>";
