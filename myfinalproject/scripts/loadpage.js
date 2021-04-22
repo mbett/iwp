@@ -122,7 +122,7 @@ function showQuestion(question) {
        // create a text input box
        html += "Answer:  <input type=\"text\" id=\"q1\" name=\"q1\" required>";
    }
-   retuern html;
+   return html;
 }
     
 function showQuestions(page, studentName, studentCourseData) {
