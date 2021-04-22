@@ -129,7 +129,8 @@ function showQuestion(number, question) {
        for (i=0; i < distractor.length; ++i) {
            html +="<input type=\"radio\" name=\"${number}\" onclick=\"checkAnswer(${number}, ${distractor[i]})\" value=\"${distractor[i]}> <br/>";
        }
-       html += question.answer + "</form><br/>";
+       html +="<input type=\"radio\" name=\"${number}\" onclick=\"checkAnswer(${number}, ${question.amswer})\" value=\"${question.answer}> <br/>"
+       html += "</form><br/>";
    } else {
         console.log('=====Short Q:' + html + '  type :' + type );
        // short answer
