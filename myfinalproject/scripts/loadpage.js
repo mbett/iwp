@@ -4,23 +4,6 @@
 // Listen for answers
 // Record answers and display Correct or hints.
 
-    //let requestURL = 'https://mbett.github.io/iwp/myfinalproject/questions.json';
-    //let request = new XMLHttpRequest();
-    //request.open('GET', requestURL);
-    //request.responseType = 'json';
-    //request.send();
-
-
-
-    //request.onload = function() {
-    // Parse the JSON question file into memory
- //   questions = request.response;
-    
-    // Store the intial JSON with no student name or answers in firebase overwriting the initial empty JSON 
-//    firebase.database().ref('deck/myfinalproject').set(questions);
-  
-//    }
-
 
 function updateStudentDB(studentName) {
     // Make the database point to the location root -> myfinalproject -> mycourse -> studentName
@@ -78,8 +61,8 @@ function populateLearningObjectivesAndSkills(page, studentName, questions) {
 
    // Cycle through the learning objectives and add them to the display
    const lo = questions.mycourse.learningObjective;
-   const myPara = document.createElement('p');
-   myPara.textContent = 'Learning Obvjectives:<br/>';
+   const myPara // = document.createElement('p');
+ = 'Learning Obvjectives:<br/>';
 
    let firstObjective = true;
    for(let i = 0; i < lo.length; i++) {
@@ -87,10 +70,10 @@ function populateLearningObjectivesAndSkills(page, studentName, questions) {
        if (lo[i].page == page) {
            if (firstObjective == true ) {
                firstObjective = false;
-               myPara.textContent += '<ul>';
+               myPara += '<ul>';
            } 
  
-           myPara.textContent += '<li>'+ lo[i].objective + '</li>';
+           myPara += '<li>'+ lo[i].objective + '</li>';
        
            // Cycle through the skills and add them to the display
            const skill = lo[i].questions;
@@ -98,21 +81,21 @@ function populateLearningObjectivesAndSkills(page, studentName, questions) {
            for(let j = 0; j < skill.length; j++) {
               if (firstSkill == true ) {
                   firstSkill = false;
-                  myPara.textContent += '<ul>';
+                  myPara += '<ul>';
               } 
-              myPara.textContent += '<li>' + skill[j].skill + '</li>';     
+              myPara += '<li>' + skill[j].skill + '</li>';     
            } //end for
            // Close the skill list    
            if (firstSkill == false )      
-             myPara.textContent += '</ul>';
+             myPara += '</ul>';
        } // end if (lo[i].page == page) 
    } //end for
    
    // Close the objective list    
    if (firstObjective == false )      
-       myPara.textContent += '</ul>';
+       myPara += '</ul>';
 
-   header.appendChild(myPara);      
+   header.innerHTML = myPara;    
 }
 
 function showQuestions(page, studentName, questions) {
