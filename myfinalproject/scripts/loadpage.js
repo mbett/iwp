@@ -117,9 +117,11 @@ function showQuestion(number, question) {
    { 
         console.log('=======MCQ:' + html + '  type :' + type );
        //multiple choice
-       html += "Choose one of the following:<br/>";  
-       for (i=0; i < question.destractor.length; ++i) {
-           html += question.destractor[i] + "<br/>";
+       html += "Choose one of the following:<br/>";
+       // Have to declare as const to get access to the value?
+       const destractor = question.destractor;
+       for (i=0; i < destractor.length; ++i) {
+           html += destractor[i] + "<br/>";
        }
    } else {
         console.log('=====Short Q:' + html + '  type :' + type );
