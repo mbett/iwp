@@ -113,7 +113,8 @@ function showQuestion(question) {
    
    let html = question.question + "<br/>";
    let type = question.questionType;
-   if (type.localCompare("Multiple Choice") == 0) // strings match
+     console.log('***********Q:' + html + '  type :' + type );
+   if (type == "Multiple Choice")  // strings match
    { 
        //multiple choice
        html += "Choose one of the following:<br/>";  
