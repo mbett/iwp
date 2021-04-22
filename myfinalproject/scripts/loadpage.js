@@ -107,7 +107,7 @@ function populateLearningObjectivesAndSkills(page, studentName, studentCourseDat
    header.innerHTML = myPara;    
 }
 
-function showQuestion(question) {
+function showQuestion(number, question) {
         
    console.log('***********Question:' + JSON.stringify(question) );
    
@@ -125,7 +125,7 @@ function showQuestion(question) {
         console.log('=====Short Q:' + html + '  type :' + type );
        // short answer
        // create a text input box
-       html += "Answer:  <input type=\"text\" id=\"q1\" name=\"q1\" required>";
+       html += "Answer:  <input type=\"text\" id=\"q" + number + "\" name=\"q" + number + "\" required>";
    }
    // Add a final line break;
    html += "<br/>";
