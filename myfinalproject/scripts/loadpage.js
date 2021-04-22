@@ -138,6 +138,7 @@ function showQuestion(number, question) {
    }
    // Add a final line break;
    html += "<br/>";
+    console.log('HTML is......' + html );
    return html;
 }
     
