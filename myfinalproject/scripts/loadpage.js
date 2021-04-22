@@ -28,17 +28,22 @@ function loadPage(page, questions) {
 }
     
 function loadCurrentPage() {
-      
+  
+    
+  // Get the url string that has the page number and the user name  
   let parameters = location.search;
   let studentName = parameters.substring( parameters.search("user")+5, parameters.length-7 );
   let currentPage = parseInt(parameters.substr(-1, 1));
-  console.log("parameters: " + studentName + " page:" + currentPage);
+    
+  // Print them out for debugging
+  // console.log("parameters: " + studentName + " page:" + currentPage);
 
+  // Get or create the student record  
   fc = firebase.database().ref('deck/myfinalproject/mycourse/' + studentName);
   fc.on("value", function(retrieve) {
     let questions = retrieve.val();
 
-    // Display the learning objectives and skills on the top of the page 1
+    // Display the learning objectives and skills on the top of the page 
     populateLearningObjectivesAndSkills(currentPage, studentName, questions);  
  
     // Show the questions  
@@ -49,20 +54,24 @@ function loadCurrentPage() {
  
 }    
 
-
+// Display the learning objectives and skills on the top of the page 
+//
 function populateLearningObjectivesAndSkills(page, studentName, questions) {
+   
+   // grab the location in the HTML file to load the learning objectives and skills
    const header = document.querySelector('header');
-   const section = document.querySelector('section');
+    
+   // a spot to print the student name
    const myH1 = document.createElement('h1');
    myH1.textContent = studentName;
    header.appendChild(myH1);
 
-   console.log('********************Wih name JSON:' + JSON.stringify(questions) );
+   // Print out the JSON object for debugging
+   // console.log('********************Wih name JSON:' + JSON.stringify(questions) );
 
    // Cycle through the learning objectives and add them to the display
    const lo = questions.mycourse.learningObjective;
-   let myPara // = document.createElement('p');
- = 'Learning Obvjectives:<br/>';
+   let myPara = 'Learning Obvjectives:<br/>';
 
    let firstObjective = true;
    for(let i = 0; i < lo.length; i++) {
@@ -99,8 +108,9 @@ function populateLearningObjectivesAndSkills(page, studentName, questions) {
 }
 
 function showQuestions(page, studentName, questions) {
-        
-    
+   
+   // grab the location in the HTML file to load the questions
+   const section = document.querySelector('section');
     
        console.log('====================Wih name JSON:' + JSON.stringify(questions) );
 
