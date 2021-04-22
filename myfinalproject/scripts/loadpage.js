@@ -151,7 +151,8 @@ function showQuestions(page, studentName, studentCourseData) {
          // Cycle through the questions and add them to the display
          const question = lo[i].questions;
          for(let j = 0; j < question.length; j++) {
-            myPara += showQuestion(question[j]);     
+            //incldues hack to generate unique number for each skill. Fails for more than 100 skills on a learning objective
+            myPara += showQuestion(i*100+j, question[j]);     
          } //end for
           
        } // end if (lo[i].page == page) 
