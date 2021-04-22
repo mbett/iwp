@@ -41,13 +41,13 @@ function loadCurrentPage() {
   // Get or create the student record  
   fc = firebase.database().ref('deck/myfinalproject/mycourse/' + studentName);
   fc.on("value", function(retrieve) {
-    let questions = retrieve.val();
+    let studentCourseData = retrieve.val();
 
     // Display the learning objectives and skills on the top of the page 
-    populateLearningObjectivesAndSkills(currentPage, studentName, questions);  
+    populateLearningObjectivesAndSkills(currentPage, studentName, studentCourseData);  
  
     // Show the questions  
-    showQuestions(currentPage, studentName, questions);
+    showQuestions(currentPage, studentName, studentCourseData);
   
   });
     
@@ -56,7 +56,7 @@ function loadCurrentPage() {
 
 // Display the learning objectives and skills on the top of the page 
 //
-function populateLearningObjectivesAndSkills(page, studentName, questions) {
+function populateLearningObjectivesAndSkills(page, studentName, studentCourseData) {
    
    // grab the location in the HTML file to load the learning objectives and skills
    const header = document.querySelector('header');
@@ -70,7 +70,7 @@ function populateLearningObjectivesAndSkills(page, studentName, questions) {
    // console.log('********************Wih name JSON:' + JSON.stringify(questions) );
 
    // Cycle through the learning objectives and add them to the display
-   const lo = questions.mycourse.learningObjective;
+   const lo = studentCourseData.mycourse.learningObjective;
    let myPara = 'Learning Obvjectives:<br/>';
 
    let firstObjective = true;
@@ -107,20 +107,61 @@ function populateLearningObjectivesAndSkills(page, studentName, questions) {
    header.innerHTML = myPara;    
 }
 
-function showQuestions(page, studentName, questions) {
+function showQuestion(question) {
+    
+    let html = question.question;
+    
+   console.log('***********Question:' + JSON.stringify(question) );
+   
+   let html = question.question + "<br/>";
+   if (question.questionType.localCompare("Multiple Choice") == 0) // strings match
+   { 
+       //multiple choice
+       html += "Choose one of the following:<br/>";  
+
+   } else {
+       // short answer
+       // create a text input box
+       html += "Answer:  <input type="text" id="q1" name="q1" required>";
+   }
+   retuern html;
+}
+    
+function showQuestions(page, studentName, studentCourseData) {
    
    // grab the location in the HTML file to load the questions
    const section = document.querySelector('section');
-    
+   
+ 
        console.log('====================Wih name JSON:' + JSON.stringify(questions) );
+   
+   // Cycle through the learning objectives and add them to the display
+   const lo = studentCourseData.mycourse.learningObjective;
+   let myPara = 'Learn By Doing<br/>';
+      
 
+   for(let i = 0; i < lo.length; i++) {
+      if (lo[i].page == page) {       
+           
+         // Cycle through the questions and add them to the display
+         const question = lo[i].questions;
+         for(let j = 0; j < question.length; j++) {
+            myPara += showQuestion(question[j]);     
+         } //end for
+          
+       } // end if (lo[i].page == page) 
+   } //end for
+    
+   header.innerHTML = myPara; 
+   return;
+    
+    
+    
         ///*************************update this
-    //  const heroes = jsonObj['members'];
+ 
         
-//let fc = firebase.database().ref('deck/myfinalproject');
-//console.log('Output: ' + fc.toString() );
-//console.log('JSON: ' + fc.toJSON() );
-return;
+
+
       const heroes = questions['members'];
 
       for(let i = 0; i < heroes.length; i++) {
