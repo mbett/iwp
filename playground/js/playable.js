@@ -15,6 +15,7 @@ function fillCode() {
     } catch(e) {
       let para = document.createElement('p');
       para.textContent = e;
+        console.log ('e is:' + e);
       section.appendChild(para);
       // section.innerHTML = e;
         
