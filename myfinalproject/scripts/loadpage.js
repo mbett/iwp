@@ -127,9 +127,9 @@ function showQuestion(number, question) {
        // print the distractors
        const distractor = question.distractor;
        for (i=0; i < distractor.length; ++i) {
-           html +='<input type="radio" name="' + i + '" onchange="checkAnswer(5, 10)" value="' + distractor[i] + '">' + distractor[i] + ' <br/>';
+           html +='<input type="radio" name="q' + number + '" onchange="checkAnswer(5, 10)" value="' + distractor[i] + '">' + distractor[i] + ' <br/>';
       }
-       html +='<input type="radio" name="mc1" onchange="checkAnswer("' + number + '", "' + question.answer + '")" value="' + question.answer + '">' + question.answer + ' <br/>';
+       html +='<input type="radio" name="q' + number + '" onchange="checkAnswer("' + number + '", "' + question.answer + '")" value="' + question.answer + '">' + question.answer + ' <br/>';
 
        html += "</form><br/>";
    } else {
@@ -176,39 +176,4 @@ function showQuestions(page, studentName, studentCourseData) {
     
     
     
-        ///*************************update this
- 
-        
-
-
-      const heroes = questions['members'];
-
-      for(let i = 0; i < heroes.length; i++) {
-        const myArticle = document.createElement('article');
-        const myH2 = document.createElement('h2');
-        const myPara1 = document.createElement('p');
-        const myPara2 = document.createElement('p');
-        const myPara3 = document.createElement('p');
-        const myList = document.createElement('ul');
-
-        myH2.textContent = heroes[i].name;
-        myPara1.textContent = 'Secret identity: ' + heroes[i].secretIdentity;
-        myPara2.textContent = 'Age: ' + heroes[i].age;
-        myPara3.textContent = 'Superpowers:';
-
-        const superPowers = heroes[i].powers;
-        for(let j = 0; j < superPowers.length; j++) {
-          const listItem = document.createElement('li');
-          listItem.textContent = superPowers[j];
-          myList.appendChild(listItem);
-        }
-
-        myArticle.appendChild(myH2);
-        myArticle.appendChild(myPara1);
-        myArticle.appendChild(myPara2);
-        myArticle.appendChild(myPara3);
-        myArticle.appendChild(myList);
-
-        section.appendChild(myArticle);
-      }
     }
