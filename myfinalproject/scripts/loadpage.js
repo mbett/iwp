@@ -135,7 +135,7 @@ function showQuestion(number, question) {
         console.log('=====Short Q:' + html + '  type :' + type );
        // short answer
        // create a text input box
-       html += 'Enter your answer:<br/><br/>  <input type="text" id="q' + number + '" name="q' + number + '" required> <button onclick="checkAnswer(' + number + ', "some text")">Submit</button><br/>';
+       html += 'Enter your answer:<br/><br/>  <input type="text" id="q' + number + '" name="q' + number + '" required> <button onclick="checkAnswer(' + number + ', \'some text\')">Submit</button><br/>';
    }
    // Add a final line break;
    html += "<br/>";
