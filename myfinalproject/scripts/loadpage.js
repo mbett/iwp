@@ -4,6 +4,27 @@
 // Listen for answers
 // Record answers and display Correct or hints.
 
+    let requestURL = 'https://mbett.github.io/iwp/myfinalproject/questions.json';
+    let request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+
+    let questions;
+    request.onload = function() {
+    
+    // Parse the JSON question file into memory
+    questions = request.response;
+    
+    // Store the intial JSON with no student name or answers in firebase overwriting the initial empty JSON 
+    firebase.database().ref('deck/myfinalproject/nostudent').set(questions);
+  
+    }
+
+
+let currentPage;
+let studentN;
+
 
 function updateStudentDB(studentName) {
     // Make the database point to the location root -> myfinalproject -> mycourse -> studentName
@@ -53,6 +74,40 @@ function loadCurrentPage(page) {
     
  
 }    
+
+
+function loadFirstPage(page, questions, studentName) {
+   
+  currentPage = page;
+   studentN = studentName;
+  // Simulate a mouse click:
+ // window.location.href = "page" + page + ".html?user=" + studentName + "&page=1";
+  window.location.href = "page" + page + ".html?page=1";
+    
+//      console.log ('Got here:' + JSON.stringify(questions) );
+}
+
+function startLesson() {
+  
+    
+  // Get the student's name
+  let studentName = document.getElementById("studentName").value;
+  
+  // Store the student's name in the JSON
+  questions.mycourse.student = studentName;
+
+  console.log ('Questions2:' + JSON.stringify(questions) );
+  
+  // Update the database to store a set of responses for this student
+  updateStudentDB(studentName);          
+    
+  // Start going through the lesson
+  // Load the first page
+  loadFirstPage( 1, questions, studentName );
+   
+  
+                        
+}
 
 // Display the learning objectives and skills on the top of the page 
 //
