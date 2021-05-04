@@ -66,7 +66,6 @@ function populateLearningObjectivesAndSkills(page, studentName, studentCourseDat
    myH1.textContent = studentName;
    header.appendChild(myH1);
 
-   // Print out the JSON object for debugging
    // console.log('********************Wih name JSON:' + JSON.stringify(questions) );
 
    // Cycle through the learning objectives and add them to the display
@@ -104,7 +103,7 @@ function populateLearningObjectivesAndSkills(page, studentName, studentCourseDat
    if (firstObjective == false )      
        myPara += '</ul>';
 
-   header.innerHTML = myPara;    
+   header.innerHTML += myPara;    
 }
 
 
