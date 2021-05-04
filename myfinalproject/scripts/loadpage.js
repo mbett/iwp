@@ -50,7 +50,7 @@ function loadCurrentPage(page) {
     
   // Get the user name  
 //  let parameters = location.search;
-  let studentName =  sessionStorage.setItem('studentName');
+  let studentName =  sessionStorage.getItem('studentName');
       
       // parameters.substring( parameters.search("user")+5, parameters.length-7 );
   let currentPage = page; // parseInt(parameters.substr(-1, 1));
