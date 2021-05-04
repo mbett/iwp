@@ -35,12 +35,15 @@ function updateStudentDB(studentName) {
 }
 
 let currentPage;
+let studentN;
 
 function loadFirstPage(page, questions, studentName) {
    
   currentPage = page;
+   studentN = studentName;
   // Simulate a mouse click:
-  window.location.href = "page" + page + ".html?user=" + studentName + "&page=1";
+ // window.location.href = "page" + page + ".html?user=" + studentName + "&page=1";
+  window.location.href = "page" + page + ".html?page=1";
     
 //      console.log ('Got here:' + JSON.stringify(questions) );
 }
