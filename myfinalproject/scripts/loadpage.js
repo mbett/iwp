@@ -27,16 +27,16 @@ function loadPage(page, questions) {
       console.log ('Got here:' + JSON.stringify(questions) );
 }
     
-function loadCurrentPage() {
+function loadCurrentPage(page) {
   
     
   // Get the url string that has the page number and the user name  
-  let parameters = location.search;
-  let studentName = parameters.substring( parameters.search("user")+5, parameters.length-7 );
-  let currentPage = parseInt(parameters.substr(-1, 1));
+//  let parameters = location.search;
+  let studentName = studentN; // parameters.substring( parameters.search("user")+5, parameters.length-7 );
+  let currentPage = page; // parseInt(parameters.substr(-1, 1));
     
   // Print them out for debugging
-  // console.log("parameters: " + studentName + " page:" + currentPage);
+  console.log("parameters: " + studentName + " page:" + currentPage);
 
   // Get or create the student record  
   fc = firebase.database().ref('deck/myfinalproject/mycourse/' + studentName);
