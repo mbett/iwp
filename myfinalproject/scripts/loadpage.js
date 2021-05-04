@@ -23,7 +23,6 @@
 
 
 let currentPage;
-let studentN;
 
 
 function updateStudentDB(studentName) {
@@ -32,8 +31,6 @@ function updateStudentDB(studentName) {
   
     // Save the current status
     firebase.database().ref('deck/myfinalproject/mycourse/' + studentName).set(questions);
-  
-    
 
 }
 
@@ -51,9 +48,11 @@ function loadPage(page, questions) {
 function loadCurrentPage(page) {
   
     
-  // Get the url string that has the page number and the user name  
+  // Get the user name  
 //  let parameters = location.search;
-  let studentName = studentN; // parameters.substring( parameters.search("user")+5, parameters.length-7 );
+  let studentName =  sessionStorage.setItem('studentName');
+      
+      // parameters.substring( parameters.search("user")+5, parameters.length-7 );
   let currentPage = page; // parseInt(parameters.substr(-1, 1));
     
   // Print them out for debugging
@@ -79,10 +78,10 @@ function loadCurrentPage(page) {
 function loadFirstPage(page, questions, studentName) {
    
   currentPage = page;
-   studentN = studentName;
-  // Simulate a mouse click:
- // window.location.href = "page" + page + ".html?user=" + studentName + "&page=1";
-  window.location.href = "page" + page + ".html?page=1";
+
+    // Simulate a mouse click:
+  window.location.href = "page" + page + ".html?user=" + studentName;
+ // window.location.href = "page" + page + ".html?";
     
 //      console.log ('Got here:' + JSON.stringify(questions) );
 }
@@ -94,7 +93,11 @@ function startLesson() {
   let studentName = document.getElementById("studentName").value;
   
   // Store the student's name in the JSON
-  questions.mycourse.student = studentName;
+  questions.mycourse.student = studentName
+    
+  // And in the session  
+  sessionStorage.setItem('studentName', studentName);
+  
 
   console.log ('Questions2:' + JSON.stringify(questions) );
   
